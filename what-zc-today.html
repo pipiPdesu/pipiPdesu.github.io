@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>今天是什么战场</title>
+</head>
+<body>
+    <script>
+        // 获取网页编写日期
+        var pageDate = new Date("2023-08-05"); // 在这里输入网页编写的日期，格式为"YYYY-MM-DD"
+
+        // 获取当前日期
+        var currentDate = new Date();
+
+        // 计算过去了几天
+        var timeDiff = currentDate.getTime() - pageDate.getTime();
+        var daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+        // 根据天数模4进行判断
+        var remainder = daysDiff % 4;
+        var result;
+
+        if (remainder === 0) {
+            result = "大草鱼";
+        } else if (remainder === 1) {
+            result = "井盖";
+        } else if (remainder === 2) {
+            result = "吹风眯眼";
+        } else {
+            result = "碎冰冰";
+        }
+
+        document.write("今天的战场是" + result,"吧大概");
+    </script>
+</body>
+</html>
